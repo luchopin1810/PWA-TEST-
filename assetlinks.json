@@ -1,8 +1,0 @@
-[{
-      "relation": ["delegate_permission/common.handle_all_urls"],
-      "target": {
-        "namespace": "android_app",
-        "package_name": "io.github.luchopin1810.twa",
-        "sha256_cert_fingerprints": ["6C:76:83:D4:EF:49:5E:01:02:AA:5E:87:95:6F:DF:61:45:95:B5:77:F9:02:E2:52:9A:76:EB:7D:60:13:36:2B"]
-      }
-    }]
