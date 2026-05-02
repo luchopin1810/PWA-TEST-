@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Calculadora Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#121212">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <div id="previous-operand"></div>
+            <div id="current-operand">0</div>
+        </div>
+        <div class="keypad">
+            <button class="btn-action" onclick="calculator.clearAll()">AC</button>
+            <button class="btn-action" onclick="calculator.delete()">⌫</button>
+            <button class="btn-action" onclick="calculator.percentage()">%</button>
+            <button class="btn-operator" onclick="calculator.chooseOperation('÷')">÷</button>
+
+            <button class="btn-number" onclick="calculator.appendNumber('7')">7</button>
+            <button class="btn-number" onclick="calculator.appendNumber('8')">8</button>
+            <button class="btn-number" onclick="calculator.appendNumber('9')">9</button>
+            <button class="btn-operator" onclick="calculator.chooseOperation('×')">×</button>
+
+            <button class="btn-number" onclick="calculator.appendNumber('4')">4</button>
+            <button class="btn-number" onclick="calculator.appendNumber('5')">5</button>
+            <button class="btn-number" onclick="calculator.appendNumber('6')">6</button>
+            <button class="btn-operator" onclick="calculator.chooseOperation('-')">-</button>
+
+            <button class="btn-number" onclick="calculator.appendNumber('1')">1</button>
+            <button class="btn-number" onclick="calculator.appendNumber('2')">2</button>
+            <button class="btn-number" onclick="calculator.appendNumber('3')">3</button>
+            <button class="btn-operator" onclick="calculator.chooseOperation('+')">+</button>
+
+            <button class="btn-number btn-zero" onclick="calculator.appendNumber('0')">0</button>
+            <button class="btn-number" onclick="calculator.appendNumber('.')">,</button>
+            <button class="btn-operator" onclick="calculator.compute()">=</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('SW registrado com sucesso!', reg.scope))
+                    .catch(err => console.error('Erro ao registrar SW:', err));
+            });
+        }
+    </script>
+</body>
+</html>
